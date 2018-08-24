@@ -1,23 +1,9 @@
-import '../styles/index.scss';
-
-// jquery, jquery-ui
-import $ from 'jquery';
-import 'jquery-ui/themes/base/base.css';
-import 'jquery-ui/themes/base/core.css';
-import 'jquery-ui/themes/base/theme.css';
-import 'jquery-ui/themes/base/selectable.css';
-import 'jquery-ui/ui/core';
-import 'jquery-ui/ui/widgets/tabs';
-import 'jquery-ui/ui/widgets/selectable';
-
 // two.js, tween.js
-//import Two from '../../node_modules/two.js/build/two';
+import Two from '../../node_modules/two.js/build/two';
 
-$(function() {
-  $( "#tabs" ).tabs({
-    collapsible: true
-  });
-});
+$
+console.log("");
+alert("graphic.js");
 
 /*
 const two = new Two({
