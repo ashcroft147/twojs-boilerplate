@@ -1,8 +1,9 @@
 ## Graphic
  1. 조업구분 별로 Rectangle 색상 지정 (H)
- 2. 상하Turn 발생 이벤트 발생시  Left / Right 표현 및 상하의 표현을 더욱 직관적으로 개선 (H)
+ 2. 상하Turn 발생 이벤트 발생시 Left / Right 표현 및 상하의 표현을 더욱 직관적으로 개선 (H)
     - 상/하 : Rectangle의 background design pattern 으로 구현
     - Left / Right : Rectangle의 Edge에 작은 Rectangle을 추가하여 Left / Right 표현
+    - 참고 Site : https://github.com/jonobr1/two.js/issues/54
  3. main_info, thk_info 의 Rectangle 을 그리는 method를 작성한다. (H)
     - main_info 영역의 Rectangle에는 Edge에 Left / Right 구분을 위한 Edge Rectangle을 그린다. 
     - 기준재료 기준으로 Left는 Blue, Right는 Red Color를 사용하고, Stroke의 두께는 Thick하게 그린다. 
