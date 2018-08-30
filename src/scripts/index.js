@@ -10,7 +10,10 @@ import 'jquery-ui/ui/core';
 import 'jquery-ui/ui/widgets/tabs';
 import 'jquery-ui/ui/widgets/selectable';
 
-import './graphic-d3';
+import './graphic/graphic-d3.js';
+import './graphic/topBottom.js';
+import './graphic/edgeRect.js';
+import './graphic/rectSize.js';
 
 $(function() {
   $( "#tabs" ).tabs({
