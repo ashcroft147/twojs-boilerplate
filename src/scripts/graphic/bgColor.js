@@ -2,24 +2,18 @@ import * as d3 from 'd3';
 import $ from 'jquery';
 // import { text } from 'd3-fetch';
 
-$( "<div>조업구분 별 Rectangular 색상</div>" ).appendTo( '#graphic' );
+$( "<div>1.조업구분 별 Rectangular 색상</div>" ).appendTo( '#graphic' );
 $( "<div id='rect-color'></div>" ).appendTo( '#graphic' );
 
-d3.json('data/bgColor.json').then(function(data){
+d3.json('data/bgColor.json').then(data => {
     console.log(data);
     //Make an SVG Container
     var svgContainer = d3.select("#rect-color").append("svg")
-                                        .attr("width", 1200)
-                                    .attr("height", 150);
+                        .attr("width", 1200)
+                        .attr("height", 150);
 
     var rects = svgContainer.selectAll("rect").data(data);
     var texts = svgContainer.selectAll("text").data(data);
-
-    /**
-     *  enter()
-     *  - 바인드 된 데이터들 중 아직 document element를 갖지 못한 데이터에 대해서
-     * 객체를 생성해서 반환한다.
-     */
 
     // 1. 조업구분별로 Rectangle 색상 지정하기
     rects.enter().append("rect")
