@@ -10,8 +10,8 @@ import 'jquery-ui/ui/core';
 import 'jquery-ui/ui/widgets/tabs';
 import 'jquery-ui/ui/widgets/selectable';
 
-import './graphic/graphic-d3.js';
-import './graphic/topBottom.js';
+import './graphic/bgColor.js';
+import './graphic/bgPattern.js';
 import './graphic/edgeRect.js';
 import './graphic/rectSize.js';
 

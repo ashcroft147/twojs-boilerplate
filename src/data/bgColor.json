@@ -1,0 +1,27 @@
+[
+	{
+		"x": 10,
+        "name": "열연",
+        "color": "blue"
+	},
+	{
+		"x": 120,
+        "name": "냉연",
+        "color": "red"
+	},
+	{
+		"x": 230,
+        "name": "후판",
+        "color": "silver"
+	},
+	{
+		"x": 340,
+        "name": "STS",
+        "color": "gold"
+	},
+	{
+		"x": 450,
+        "name": "전강",
+        "color": "purple"
+	}
+]
