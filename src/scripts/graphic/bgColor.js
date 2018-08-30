@@ -8,18 +8,17 @@ $( "<div id='rect-color'></div>" ).appendTo( '#graphic' );
 d3.json('data/bgColor.json').then(data => {
     console.log(data);
     //Make an SVG Container
-    var svgContainer = d3.select("#rect-color").append("svg")
+    var svg = d3.select("#rect-color").append("svg")
                         .attr("width", 1200)
                         .attr("height", 150);
 
-    var rects = svgContainer.selectAll("rect").data(data);
-    var texts = svgContainer.selectAll("text").data(data);
+    var rects = svg.selectAll("rect").data(data);
+    var texts = svg.selectAll("text").data(data);
 
     // 1. 조업구분별로 Rectangle 색상 지정하기
     rects.enter().append("rect")
                 .style("fill", "blue")
                 .attr('x', function(d, i) {
-                    console.log("x: " + d.x + ", "+i);
                     return d.x;
                 })
                 .attr('y', 10)

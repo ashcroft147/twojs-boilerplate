@@ -1,0 +1,14 @@
+[
+	{
+		"x": 10,
+		"name": "Top",
+		"stroke": "#000000",
+        "pattern_url": "url(#pattern-top)"
+	},
+	{
+		"x": 120,
+		"name": "Bottom",
+		"stroke": "#000000",
+        "pattern_url": "url(#pattern-bottom)"
+	}
+]
