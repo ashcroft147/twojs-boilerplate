@@ -1,14 +1,15 @@
 import * as d3 from 'd3';
-import $ from 'jquery';
 
 // 2. 상 / 하 Background pattern
-$( "<div>2.상/하 Background pattern</div>" ).appendTo( '#graphic' );
-$( "<div id='bg-pattern'></div>" ).appendTo( '#graphic' );
+d3.select("#graphic").append("div")
+        .text("2.상/하 Background pattern");
 
+d3.select("#graphic").append("div")
+        .attr("id", "bg-pattern");
 
 d3.json('data/bgPattern.json').then(data => {
     console.log(data);
-// 1. Make an SVG Container
+    // 1. Make an SVG Container
     var svg = d3.select("#bg-pattern").append("svg")
                                    .attr("width", 1200)
                                    .attr("height", 150);

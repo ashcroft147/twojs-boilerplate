@@ -1,12 +1,15 @@
 import * as d3 from 'd3';
-import $ from 'jquery';
-// import { text } from 'd3-fetch';
 
-$( "<div>1.조업구분 별 Rectangular 색상</div>" ).appendTo( '#graphic' );
-$( "<div id='rect-color'></div>" ).appendTo( '#graphic' );
+// 2. 상 / 하 Background pattern
+d3.select("#graphic").append("div")
+        .text("1.조업구분 별 Rectangular 색상");
+
+d3.select("#graphic").append("div")
+        .attr("id", "rect-color");
 
 d3.json('data/bgColor.json').then(data => {
     console.log(data);
+    debugger;
     //Make an SVG Container
     var svg = d3.select("#rect-color").append("svg")
                         .attr("width", 1200)
