@@ -6,6 +6,9 @@
     - 참고 Site : https://github.com/jonobr1/two.js/issues/54
  3. main_info, thk_info 의 Rectangle 을 그리는 method를 작성한다. (H)
     - main_info 영역의 Rectangle에는 Edge에 Left / Right 구분을 위한 Edge Rectangle을 그린다. 
+        - [d3.js adding polygon inside rectangle](http://jsfiddle.net/cyril123/pgerw8va/)
+        - [Making a bar chart](http://alignedleft.com/tutorials/d3/making-a-bar-chart)
+        - [D3.js gradients](https://medium.com/data-in-motion/d3-js-gradients-trickier-than-they-look-9fb4ec728f5)
     - 기준재료 기준으로 Left는 Blue, Right는 Red Color를 사용하고, Stroke의 두께는 Thick하게 그린다. 
     - Edge Rectangle는 정사각형이며 길이는 폭길이의 ~~~ 배율로 지정한다.
 
