@@ -2,26 +2,31 @@
 	{
 		"x": 10,
         "name": "열연",
-        "color": "blue"
+		"color": "blue",
+		"stroke" : "#000000"
 	},
 	{
 		"x": 120,
         "name": "냉연",
-        "color": "red"
+		"color": "red",
+		"stroke" : "#000000"
 	},
 	{
 		"x": 230,
         "name": "후판",
-        "color": "silver"
+		"color": "silver",
+		"stroke" : "#000000"
 	},
 	{
 		"x": 340,
         "name": "STS",
-        "color": "gold"
+		"color": "gold",
+		"stroke" : "#000000"
 	},
 	{
 		"x": 450,
         "name": "전강",
-        "color": "purple"
+		"color": "purple",
+		"stroke" : "#000000"
 	}
 ]

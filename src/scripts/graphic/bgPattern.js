@@ -8,18 +8,17 @@ d3.select("#graphic").append("div")
         .attr("id", "bg-pattern");
 
 d3.json('data/bgPattern.json').then(data => {
-    console.log(data);
-    // 1. Make an SVG Container
-    var svg = d3.select("#bg-pattern").append("svg")
+    // 1. Make an svg2 Container
+    var svg2 = d3.select("#bg-pattern").append("svg")
                                    .attr("width", 1200)
                                    .attr("height", 150);
 
-    var rects = svg.selectAll("rect").data(data);
-    var texts = svg.selectAll("text").data(data);
+    var rects = svg2.selectAll("rect").data(data);
+    var texts = svg2.selectAll("text").data(data);
 
     // defs elements list
     // Type 1
-    svg.append("defs").append("pattern")
+    svg2.append("defs").append("pattern")
                 .attr("id", "pattern-top")
                 .attr('x', 0)
                 .attr('y', 0)
@@ -33,7 +32,7 @@ d3.json('data/bgPattern.json').then(data => {
                 .style('stroke', "none")
                 .style('fill', 'pink');
     // Type 2
-    svg.append("defs").append("pattern")
+    svg2.append("defs").append("pattern")
                 .attr('id', 'pattern-bottom')
                 .attr('x', 0)
                 .attr('y', 0)            

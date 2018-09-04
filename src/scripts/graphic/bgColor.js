@@ -9,7 +9,6 @@ d3.select("#graphic").append("div")
 
 d3.json('data/bgColor.json').then(data => {
     console.log(data);
-    debugger;
     //Make an SVG Container
     var svg = d3.select("#rect-color").append("svg")
                         .attr("width", 1200)
@@ -29,6 +28,9 @@ d3.json('data/bgColor.json').then(data => {
                 .attr('height', 100)
                 .style('fill', d => {
                     return d.color;
+                })
+                .style('stroke', d => {
+                    return d.stroke;
                 });
 
     // 2. Rectangle에 Name Captioning
