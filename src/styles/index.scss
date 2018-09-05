@@ -3,3 +3,9 @@ $body-color: blue;
 body {
   color: $body-color;
 }  
+
+.axis line,
+.axis path {
+  fill : none;
+  stroke : #000;
+}

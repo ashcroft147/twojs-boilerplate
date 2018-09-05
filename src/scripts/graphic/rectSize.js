@@ -7,79 +7,86 @@ d3.select("#graphic").append("div")
 d3.select("#graphic").append("div")
         .attr("id", "rect_size");
 
-var svg4 = d3.select("#rect_size").append("svg")
-        .attr("width", 1200)
-        .attr("height", 150);
+// Set Margin Config
+const margin = {top : 30, right : 0, bottom : 0, left : 30};
+
+var viewWidth = 1200 - margin.left - margin.right;
+var viewHeight = 180 - margin.top - margin.bottom;
+
+var g = d3.select("#rect_size").append("svg")
+        .attr("width", viewWidth + margin.left + margin.right)
+        .attr("height", viewHeight + margin.top + margin.bottom)
+    .append("g")
+        .attr("transfrom", "translate(" + 300 + "," + 200+ ")");
 
 // Container
-var rect_main = svg4.append("rect")
+var rect_main = g.append("rect")
                     .style('fill', 'yellow')
-                    .attr("x", 10)
-                    .attr("y", 10)
-                    .attr("width", 200)
+                    .attr("id", "rect_main")
+                    .attr("x", 10 + margin.left)
+                    .attr("y", 10 + margin.top)
+                    .attr("width", 217)
                     .attr("height", 100)
                     .style("stroke","#000000");                 
 
-var rect_left = svg4.append("rect")
+var rect_left = g.append("rect")
                     .style('fill', 'red')
-                    .attr("x", 10)
-                    .attr("y", 90)
+                    .attr("x", 10 + margin.left)
+                    .attr("y", 90 + margin.top)
                     .attr("width", 20)
                     .attr("height", 20)
                     .style("stroke","#000000");
 
-var rect_right = svg4.append("rect")
+var rect_right = g.append("rect")
                     .style('fill', 'blue')
-                    .attr("x", 190)
-                    .attr("y", 10)
+                    .attr("x", 207 + margin.left)
+                    .attr("y", 10 + margin.top)
                     .attr("width", 20)
                     .attr("height", 20)
                     .style("stroke","#000000");
                            
-svg4.append('text').style('fill', 'blac')
-                        .attr('x', 75)
-                        .attr('y', 130)
+g.append('text').style('fill', 'blac')
+                        .attr('x', 75 + margin.left)
+                        .attr('y', 130 + margin.top)
                         .text('Rect Size');
 
 
-// horizontal rect size line 
-svg4.append("line").style('stroke', '#000000')
-                .style("stroke-dasharray", ("3, 3"))  // <== This line here!!
-                .attr("x1", 300)     // x position of the first end of the line
-                .attr("y1", 100)      // y position of the first end of the line
-                .attr("x2", 500)     // x position of the second end of the line
-                .attr("y2", 100);    // y position of the second end of the line
+// Add Line with Axis
+// 1. Create scale
+var rectMain = d3.select("#rect_main").node().getBoundingClientRect();
 
-svg4.append("line").style('stroke', '#000000')
-                .attr("x1", 300)     // x position of the first end of the line
-                .attr("y1", 95)      // y position of the first end of the line
-                .attr("x2", 300)     // x position of the second end of the line
-                .attr("y2", 105);    // y position of the second end of the line
+// xscale
+var width = rectMain.width;
 
-svg4.append("line").style('stroke', '#000000')
-                .attr("x1", 500)     // x position of the first end of the line
-                .attr("y1", 95)      // y position of the first end of the line
-                .attr("x2", 500)     // x position of the second end of the line
-                .attr("y2", 105);    // y position of the second end of the line            
+var xscale = d3.scaleLinear()
+                .domain([0, width])
+                .range([0, width]);
+// yscale
+var height = rectMain.height;
+
+var yscale = d3.scaleLinear()
+                .domain([0, height])
+                .range([0, height]);
+
+// 2. Add scale to axis
+var x_axis = d3.axisTop(xscale)
+            .tickValues(xscale.ticks(10).concat(xscale.domain()));
+            // .tickSize(3) // tick line length
+            // .ticks(10); // tick 갯수
+
+var y_axis = d3.axisLeft(yscale)
+            .tickValues(yscale.ticks(5).concat(yscale.domain()));
                 
-                
-// vertical rect size line 
-svg4.append("line").style('stroke', '#000000')
-                .style("stroke-dasharray", ("3, 3"))  // <== This line here!!
-                .attr("x1", 250)     // x position of the first end of the line
-                .attr("y1", 10)      // y position of the first end of the line
-                .attr("x2", 250)     // x position of the second end of the line
-                .attr("y2", 110);    // y position of the second end of the line
 
-svg4.append("line").style('stroke', '#000000')
-                .attr("x1", 300)     // x position of the first end of the line
-                .attr("y1", 95)      // y position of the first end of the line
-                .attr("x2", 300)     // x position of the second end of the line
-                .attr("y2", 105);    // y position of the second end of the line
+// 3. Append group and insert axis
+var xAxisTranslate =  30;
 
-svg4.append("line").style('stroke', '#000000')
-                .attr("x1", 500)     // x position of the first end of the line
-                .attr("y1", 95)      // y position of the first end of the line
-                .attr("x2", 500)     // x position of the second end of the line
-                .attr("y2", 105);    // y position of the second end of the line            
-                
+g.append("g")
+        .attr("transform", "translate(40, " + xAxisTranslate  +")")
+        .call(x_axis)
+        .attr("class", "axis");
+
+g.append("g")
+        .attr("transform", "translate(30, " + new Number(xAxisTranslate + 10)  +")")
+        .call(y_axis)
+        .attr("class","axis");

@@ -14,6 +14,7 @@ import './graphic/bgColor.js';
 import './graphic/bgPattern.js';
 import './graphic/edgeRect.js';
 import './graphic/rectSize.js';
+import './graphic/refMaterial.js';
 
 $(function() {
   $( "#tabs" ).tabs({
