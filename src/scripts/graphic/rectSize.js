@@ -10,12 +10,12 @@ d3.select("#graphic").append("div")
 // Set Margin Config
 const margin = {top : 30, right : 0, bottom : 0, left : 30};
 
-var viewWidth = 1200 - margin.left - margin.right;
-var viewHeight = 180 - margin.top - margin.bottom;
+var viewPortWidth = 1200 - margin.left - margin.right;
+var viewPortHeight = 180 - margin.top - margin.bottom;
 
 var g = d3.select("#rect_size").append("svg")
-        .attr("width", viewWidth + margin.left + margin.right)
-        .attr("height", viewHeight + margin.top + margin.bottom)
+        .attr("width", viewPortWidth + margin.left + margin.right)
+        .attr("height", viewPortHeight + margin.top + margin.bottom)
     .append("g")
         .attr("transfrom", "translate(" + 300 + "," + 200+ ")");
 
